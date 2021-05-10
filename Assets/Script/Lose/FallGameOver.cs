@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FallGameOver : MonoBehaviour
 {
@@ -8,8 +9,7 @@ public class FallGameOver : MonoBehaviour
     {
         if (collision.collider.tag == "player")
         {
-            Destroy(collision.collider.gameObject);
-            Debug.Log("You Lose");
+            SceneManager.LoadScene("SceneMenu", LoadSceneMode.Single);
         }
     }
 

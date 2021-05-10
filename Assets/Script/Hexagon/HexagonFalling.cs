@@ -17,7 +17,7 @@ public class HexagonFalling : MonoBehaviour
 
     private void Start()
     {
-        selfDelete = TimeDelete(0.5f);
+        selfDelete = TimeDelete(0.8f);
 
     }
 

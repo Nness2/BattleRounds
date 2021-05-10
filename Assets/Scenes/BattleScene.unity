@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 82508465}
   m_Layer: 0
   m_Name: GameManager
-  m_TagString: Untagged
+  m_TagString: GameManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -167,6 +167,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TransitionPrefab: {fileID: 1244556519669529073, guid: f2b67eb3a02510b4793368011975f6f7,
     type: 3}
+  RoundNumber: 0
 --- !u!1 &1841319560
 GameObject:
   m_ObjectHideFlags: 0
