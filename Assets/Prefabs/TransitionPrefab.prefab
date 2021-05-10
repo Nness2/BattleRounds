@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   countDownText: {fileID: 0}
-  calculateGamePrefab: {fileID: 8833470925077975986, guid: e0200ddb013f7fe47a4ecc8c9cfebb15,
+  calculateGamePrefab: {fileID: 1244556519669529073, guid: caa712a527e3e78409569866eeb00b39,
     type: 3}
 --- !u!1 &2956894141658429900
 GameObject:
