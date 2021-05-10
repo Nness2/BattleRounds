@@ -1,0 +1,39 @@
+{
+  "MemorizeGame": [
+    {
+      "question": "Love",
+      "answer": [
+        "Love",
+        "Love",
+        "Kissing",
+        "Kissing"
+      ],
+      "true": [
+        0,
+        1
+      ],
+      "wrong": [ //add wrong choice index
+        2,
+        3
+      ]
+    },
+
+    {
+      "question": "Laugh",
+      "answer": [
+        "Ghost",
+        "Laugh",
+        "Laugh",
+        "Ghost"
+      ],
+      "true": [
+        1,
+        2
+      ],
+      "wrong": [
+        0,
+        3
+      ]
+    }
+  ]
+}

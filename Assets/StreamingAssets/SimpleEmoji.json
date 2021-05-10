@@ -1,0 +1,25 @@
+{
+  "SimpleGame": [
+    {
+      "question": "Love",
+      "answer": [
+        "Laugh",
+        "kissing",
+        "Weary",
+        "Dead"
+      ],
+      "true": 1
+    },
+
+    {
+      "question": "Ghost",
+      "answer": [
+        "Love",
+        "Laugh",
+        "Weary",
+        "Tongue"
+      ],
+      "true": 2
+    }
+  ]
+}
