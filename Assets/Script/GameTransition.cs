@@ -41,7 +41,7 @@ public class GameTransition : MonoBehaviour
 
             if (roundNubmer == 0)
             {
-                Instantiate(calculateGamePrefab, transform.position, Quaternion.identity);
+                Instantiate(SimpleGamePrefab, transform.position, Quaternion.identity);
             }
             else if (roundNubmer == 1)
             {

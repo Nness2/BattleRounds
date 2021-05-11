@@ -64,7 +64,8 @@ public class BotIA : MonoBehaviour
         if (Vector3.Distance(pointTargeted, transform.position) < 1 )
         {
             state = 2;
-            GetComponent<Rigidbody>().velocity = Vector3.zero;
+            GetComponent<Rigidbody>().velocity = new Vector3(0, GetComponent<Rigidbody>().velocity.y, 0);
+
         }
 
         if (TargetPoints.Length > 0)
@@ -83,6 +84,7 @@ public class BotIA : MonoBehaviour
 
         if (GetComponent<Rigidbody>().velocity.x != 0f || GetComponent<Rigidbody>().velocity.z != 0f)
         {
+
             transform.rotation = Quaternion.LookRotation(new Vector3(GetComponent<Rigidbody>().velocity.x, 0, GetComponent<Rigidbody>().velocity.z));
 
             animator.SetInteger("AnimState", 1);
