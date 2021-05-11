@@ -9,7 +9,8 @@ public class FallGameOver : MonoBehaviour
     {
         if (collision.collider.tag == "player")
         {
-            SceneManager.LoadScene("SceneMenu", LoadSceneMode.Single);
+            Destroy(collision.collider.gameObject);
+            //SceneManager.LoadScene("SceneMenu", LoadSceneMode.Single);
         }
         if (collision.collider.tag == "Bot")
         {

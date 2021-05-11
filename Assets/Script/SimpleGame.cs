@@ -56,7 +56,7 @@ public class SimpleGame : MonoBehaviour
         gameData = JsonMapper.ToObject(jsonString);
         //Debug.Log(gameData["CalculateGame"][0]["question"]);
         OptNbr = Random.Range(0, gameData["SimpleGame"].Count); ;
-        ResultFieldsList[Random.Range(0, 4)].transform.parent.gameObject.tag = "TargetPointRandom";
+        ResultFieldsList[Random.Range(0, 4)].tag = "TargetPointRandom";
 
         string emojiName = gameData["SimpleGame"][OptNbr]["question"].ToString();
         Texture2D tex = Resources.Load("Images/Emoji/" + emojiName) as Texture2D;
