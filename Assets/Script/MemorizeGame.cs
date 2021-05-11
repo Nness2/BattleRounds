@@ -25,6 +25,8 @@ public class MemorizeGame : MonoBehaviour
     public GameObject EmojiDisplayer;
     public GameObject TextDisplayer;
 
+    private int GpointNmb;
+    private int RpointNmb;
     private int state;
 
     private IEnumerator EndCoroutine;
@@ -59,8 +61,8 @@ public class MemorizeGame : MonoBehaviour
 
         gameData = JsonMapper.ToObject(jsonString);
         //Debug.Log(gameData["CalculateGame"][0]["question"]);
-        OptNbr = Random.Range(0, gameData[jsonName].Count); ;
-
+        OptNbr = Random.Range(0, gameData[jsonName].Count);
+        RpointNmb = Random.Range(0, 4);
         string emojiName = gameData[jsonName][OptNbr]["question"].ToString();
         Texture2D tex;
         //tex = Resources.Load("Images/Emoji/" + emojiName) as Texture2D;
@@ -70,6 +72,11 @@ public class MemorizeGame : MonoBehaviour
             emojiName = gameData[jsonName][OptNbr]["answer"][i].ToString();
             tex = Resources.Load("Images/Emoji/" + emojiName) as Texture2D;
             ResultFieldsList[i].GetComponent<Renderer>().material.mainTexture = tex;
+
+            if (gameData["MemorizeGame"][OptNbr]["answer"][i].ToString() == gameData["MemorizeGame"][OptNbr]["answer"][int.Parse(gameData["MemorizeGame"][OptNbr]["true"][Random.Range(0, 2)].ToString())].ToString())
+            {
+                GpointNmb = i;
+            }
         }
 
     }
@@ -88,9 +95,13 @@ public class MemorizeGame : MonoBehaviour
             {
                 for (int i = 0; i < gameData[jsonName][OptNbr]["answer"].Count; i++)
                 {
-                        Texture2D tex = Resources.Load("Images/Emoji/interrogation") as Texture2D;
-                        ResultFieldsList[i].GetComponent<Renderer>().material.mainTexture = tex;
+                    Texture2D tex = Resources.Load("Images/Emoji/interrogation") as Texture2D;
+                    ResultFieldsList[i].GetComponent<Renderer>().material.mainTexture = tex;
+                    if (i == GpointNmb)
+                        ResultFieldsList[i].tag = "TargetPoint";
                 }
+                ResultFieldsList[RpointNmb].tag = "TargetPointRandom";
+
                 state = 1;
                 totaltime = 5;
                 progressbarimg.fillAmount = 1;
@@ -118,6 +129,7 @@ public class MemorizeGame : MonoBehaviour
                     {
                         tex = Resources.Load("Images/Emoji/" + gameData[jsonName][OptNbr]["question"].ToString()) as Texture2D;
                         ResultFieldsList[int.Parse(gameData[jsonName][OptNbr]["true"][i].ToString())].GetComponent<Renderer>().material.mainTexture = tex;
+
                     }
                     for (int i = 0; i < gameData[jsonName][OptNbr]["wrong"].Count; i++)
                     {
@@ -125,6 +137,7 @@ public class MemorizeGame : MonoBehaviour
                     }
                     endRound = true;
                     StartCoroutine(EndCoroutine);
+
                 }
             }
         }

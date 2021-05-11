@@ -18,8 +18,6 @@ public class SelfJoyStick : MonoBehaviour
         if (Input.GetButtonUp("Fire1"))
         {
             transform.position = initPos;
-            Debug.Log(initPos);
-            Debug.Log(transform.position);
         }
     }
 }

@@ -19,7 +19,7 @@ public class CalculateGame : MonoBehaviour
     public List<GameObject> ResultFieldsList;
     private bool endRound;
     private int OptNbr;
-
+    private int RpointNmb;
     public GameObject TransitionPrefab;
 
     private IEnumerator EndCoroutine;
@@ -55,12 +55,17 @@ public class CalculateGame : MonoBehaviour
         gameData = JsonMapper.ToObject(jsonString);
         //Debug.Log(gameData["CalculateGame"][0]["question"]);
         OptNbr = Random.Range(0, gameData["CalculateGame"].Count); ;
+        ResultFieldsList[Random.Range(0, 4)].transform.parent.gameObject.tag = "TargetPointRandom";
 
         countDownText.GetComponent<TMP_Text>().text = gameData["CalculateGame"][OptNbr]["question"].ToString();
 
         for (int i = 0; i < gameData["CalculateGame"][OptNbr]["answer"].Count; i++)
         {
             ResultFieldsList[i].GetComponent<TMP_Text>().text = gameData["CalculateGame"][OptNbr]["answer"][i].ToString();
+            if (int.Parse(gameData["CalculateGame"][OptNbr]["answer"][i].ToString()) == int.Parse(gameData["CalculateGame"][OptNbr]["true"].ToString()))
+            {
+                ResultFieldsList[i].transform.parent.gameObject.tag = "TargetPoint";
+            }
         }
 
     }
@@ -73,6 +78,7 @@ public class CalculateGame : MonoBehaviour
         {
             progressbarimg.fillAmount -= 1.0f / 5 * Time.deltaTime;
         }
+
         else
         {
             if (endRound == false)
@@ -83,10 +89,11 @@ public class CalculateGame : MonoBehaviour
                     //Debug.Log(int.Parse(gameData["CalculateGame"][0]["true"].ToString()));
 
                     if (int.Parse(ResultFieldsList[i].GetComponent<TMP_Text>().text) != int.Parse(gameData["CalculateGame"][OptNbr]["true"].ToString()))
-                        Destroy(ResultFieldsList[i].transform.parent.gameObject);
+                        ResultFieldsList[i].transform.parent.gameObject.transform.position = new Vector3(ResultFieldsList[i].transform.parent.gameObject.transform.position.x, -1999, ResultFieldsList[i].transform.parent.gameObject.transform.position.z);
                 }
                 endRound = true;
                 StartCoroutine(EndCoroutine);
+
             }
 
         }

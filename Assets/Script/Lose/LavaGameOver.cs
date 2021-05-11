@@ -12,6 +12,10 @@ public class LavaGameOver : MonoBehaviour
         {
             SceneManager.LoadScene("SceneMenu", LoadSceneMode.Single);
         }
+        if (collision.collider.tag == "Bot")
+        {
+            Destroy(collision.collider);
+        }
     }
 
     // Update is called once per frame

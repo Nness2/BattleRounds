@@ -16,6 +16,7 @@ public class GameTransition : MonoBehaviour
     public GameObject LavaGamePrefab;
     public GameObject hexagonGamePrefab;
 
+
     //public GameObject StartWall;
     //private GameObject Wall;
 
@@ -29,6 +30,7 @@ public class GameTransition : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         currentTime -= 1 * Time.deltaTime;
         countDownText.GetComponent<TMP_Text>().text = currentTime.ToString("0");
 

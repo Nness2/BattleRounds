@@ -8,7 +8,7 @@ public class HexagonFalling : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.collider.tag == "player")
+        if(collision.collider.tag == "player" || collision.collider.tag == "Bot")
         {
             transform.gameObject.GetComponent<SpriteRenderer>().color = Color.red;
             StartCoroutine(selfDelete);

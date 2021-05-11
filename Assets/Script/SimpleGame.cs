@@ -56,6 +56,7 @@ public class SimpleGame : MonoBehaviour
         gameData = JsonMapper.ToObject(jsonString);
         //Debug.Log(gameData["CalculateGame"][0]["question"]);
         OptNbr = Random.Range(0, gameData["SimpleGame"].Count); ;
+        ResultFieldsList[Random.Range(0, 4)].transform.parent.gameObject.tag = "TargetPointRandom";
 
         string emojiName = gameData["SimpleGame"][OptNbr]["question"].ToString();
         Texture2D tex = Resources.Load("Images/Emoji/" + emojiName) as Texture2D;
@@ -65,8 +66,11 @@ public class SimpleGame : MonoBehaviour
             emojiName = gameData["SimpleGame"][OptNbr]["answer"][i].ToString();
             tex = Resources.Load("Images/Emoji/" + emojiName) as Texture2D;
             ResultFieldsList[i].GetComponent<Renderer>().material.mainTexture = tex;
+            if (gameData["SimpleGame"][OptNbr]["answer"][i].ToString() == gameData["SimpleGame"][OptNbr]["answer"][int.Parse(gameData["SimpleGame"][OptNbr]["true"].ToString())].ToString())
+            {
+                ResultFieldsList[i].tag = "TargetPoint";
+            }
         }
-
     }
 
     // Update is called once per frame

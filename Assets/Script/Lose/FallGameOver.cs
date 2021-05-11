@@ -11,6 +11,10 @@ public class FallGameOver : MonoBehaviour
         {
             SceneManager.LoadScene("SceneMenu", LoadSceneMode.Single);
         }
+        if (collision.collider.tag == "Bot")
+        {
+            Destroy(collision.collider.gameObject);
+        }
     }
 
 

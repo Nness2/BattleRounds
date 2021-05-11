@@ -8,6 +8,10 @@ TagManager:
   - Joystick
   - player
   - GameManager
+  - TargetPoint
+  - TargetCandidat
+  - Bot
+  - TargetPointRandom
   layers:
   - Default
   - TransparentFX
@@ -17,7 +21,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Bot
   - 
   - 
   - 
