@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2263570613920047527}
   - component: {fileID: 6525276862930901905}
   - component: {fileID: -3033781497002301928}
+  - component: {fileID: -1750301148366033767}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -118,8 +119,42 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2263570613920047527}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: -1750301148366033767}
+        m_MethodName: selctColor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: -1750301148366033767}
+        m_MethodName: SetColorAtFile
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &-3033781497002301928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7712642058610021380}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ff3cb51f6a5f3e498383cbfde60a629, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-1750301148366033767
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -128,6 +163,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7712642058610021380}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ff3cb51f6a5f3e498383cbfde60a629, type: 3}
+  m_Script: {fileID: 11500000, guid: 58262983e876b344b81c4d47dd3b9a1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterColor: {fileID: 0}

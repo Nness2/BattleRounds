@@ -11,12 +11,12 @@ public class PopulateColorSkin : MonoBehaviour
     void Start()
     {
         colorList = new List<Color>();
-        colorList.Add(Color.blue);
+        colorList.Add(Color.gray);
         colorList.Add(Color.green);
         colorList.Add(Color.red);
         colorList.Add(Color.white);
         colorList.Add(Color.black);
-        colorList.Add(Color.gray);
+        colorList.Add(Color.blue);
         colorList.Add(Color.cyan);
         colorList.Add(Color.yellow);
 

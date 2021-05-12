@@ -726,6 +726,24 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 465217373}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &465217375 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -7767868420266356462, guid: 96c7bfe29c795034ba0908ffee82851d,
+    type: 3}
+  m_PrefabInstance: {fileID: 465217373}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &465217376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 465217375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ff3cb51f6a5f3e498383cbfde60a629, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &532516839
 GameObject:
   m_ObjectHideFlags: 0
@@ -1474,6 +1492,16 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 296103286623122125, guid: 6be1894a54de6f84c93e02f844675976,
+        type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 296103286623122125, guid: 6be1894a54de6f84c93e02f844675976,
+        type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 320
+      objectReference: {fileID: 0}
     - target: {fileID: 296103286623122127, guid: 6be1894a54de6f84c93e02f844675976,
         type: 3}
       propertyPath: m_Name
@@ -1557,9 +1585,9 @@ RectTransform:
   m_Father: {fileID: 1371760019929129925}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 620.92, y: 256}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: -182, y: 4366}
   m_SizeDelta: {x: 256, y: 256}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1371760018926446172
@@ -1796,10 +1824,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 343.7, y: 600}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3

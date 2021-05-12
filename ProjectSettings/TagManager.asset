@@ -13,6 +13,7 @@ TagManager:
   - Bot
   - TargetPointRandom
   - CoinsCanvas
+  - MainSurface
   layers:
   - Default
   - TransparentFX
