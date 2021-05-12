@@ -26,5 +26,7 @@ public class Levitation : MonoBehaviour
         _transform.Rotate(0, speedRotation * Time.deltaTime, 0);
 
         _transform.position = new Vector3(_transform.position.x ,(float) (_initialPosition.y + Math.Sin(Time.time * speedBounce) * bounceIntensity), _transform.position.z);
+
+
     }
 }
