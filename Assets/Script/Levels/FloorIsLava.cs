@@ -10,7 +10,7 @@ using UnityEngine.Networking;
 public class FloorIsLava : MonoBehaviour
 {
     public Image progressbarimg;
-    public float totaltime = 3;
+    public float totaltime;
 
     private string jsonString;
     private JsonData gameData;
@@ -34,6 +34,7 @@ public class FloorIsLava : MonoBehaviour
 
     void Start()
     {
+        totaltime = 3;
         state = 0;
         prefabObjects = new List<GameObject>();
         EndCoroutine = WaitAndPrint(3.0f);
@@ -88,7 +89,7 @@ public class FloorIsLava : MonoBehaviour
             totaltime = totaltime - Time.deltaTime;
             if (totaltime > 0)
             {
-                progressbarimg.fillAmount -= 1.0f / 5 * Time.deltaTime;
+                progressbarimg.fillAmount -= 1.0f / 3 * Time.deltaTime;
             }
             else
             {
@@ -96,7 +97,7 @@ public class FloorIsLava : MonoBehaviour
                 prefabObjects.Add(prefab);
                 
                 state = 1;
-                totaltime = 3;
+                totaltime = 1;
                 //progressbarimg.fillAmount = 1;
 
             }

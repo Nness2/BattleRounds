@@ -31,15 +31,19 @@ public class PlayerMouvement : MonoBehaviour
             myBody.velocity.y,
             Mathf.Round(joystick.Vertical * 100f) / 100f * moveForce);
 
+
         if (joystick.Horizontal != 0f || joystick.Vertical != 0f)
         {
             transform.rotation = Quaternion.LookRotation(new Vector3(myBody.velocity.x, 0, myBody.velocity.z));
+        }
+
+        if (joystick.Horizontal > 0.1f || joystick.Vertical > 0.1f || joystick.Horizontal < -0.1f || joystick.Vertical < -0.1f)
+        {
             animator.SetInteger("AnimState", 1);
         }
         else
         {
             animator.SetInteger("AnimState", 0);
-
         }
     }
 }

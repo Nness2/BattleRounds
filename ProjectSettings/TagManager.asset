@@ -12,6 +12,7 @@ TagManager:
   - TargetCandidat
   - Bot
   - TargetPointRandom
+  - CoinsCanvas
   layers:
   - Default
   - TransparentFX

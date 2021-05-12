@@ -5,14 +5,14 @@ using UnityEngine.UI;
 
 public class Hexagon : MonoBehaviour
 {
-    public float totaltime = 5;
+    public float totaltime;
     public Image progressbarimg;
     public GameObject TransitionPrefab;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        totaltime = 2;
     }
 
     // Update is called once per frame
@@ -22,7 +22,8 @@ public class Hexagon : MonoBehaviour
         totaltime = totaltime - Time.deltaTime;
         if (totaltime > 0)
         {
-            progressbarimg.fillAmount -= 1.0f / 5 * Time.deltaTime;
+            progressbarimg.fillAmount -= 1.0f / 2 * Time.deltaTime;
+            Debug.Log(totaltime);
         }
         else
         {

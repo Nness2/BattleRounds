@@ -106,3 +106,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e23505c67f5690d4fa94a67a2c337dfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EndCanvas: {fileID: 4310753364925276697, guid: 0594eb833f512f140bc84881c30b5817,
+    type: 3}

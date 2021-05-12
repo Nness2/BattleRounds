@@ -91,6 +91,8 @@ MonoBehaviour:
     type: 3}
   hexagonGamePrefab: {fileID: 8833470925077975986, guid: e0200ddb013f7fe47a4ecc8c9cfebb15,
     type: 3}
+  EndCanvas: {fileID: 4310753364925276697, guid: b4057e7cc1f06ce4cae1c76401435e7a,
+    type: 3}
 --- !u!1 &2396448330411337860
 GameObject:
   m_ObjectHideFlags: 0

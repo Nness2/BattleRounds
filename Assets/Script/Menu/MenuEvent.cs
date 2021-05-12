@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class MenuEvent : MonoBehaviour
 {
     // Start is called before the first frame update
+    public GameObject CanvasSkin;
+
     void Start()
     {
 
@@ -20,5 +22,10 @@ public class MenuEvent : MonoBehaviour
     public void StartGame()
     {
         SceneManager.LoadScene("BattleScene", LoadSceneMode.Single); 
+    }
+
+    public void OpenSkinCanvas()
+    {
+        CanvasSkin.SetActive(!CanvasSkin.activeSelf);
     }
 }

@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class FallGameOver : MonoBehaviour
+public class EndEvent : MonoBehaviour
 {
-    private void OnCollisionEnter(Collision collision)
+    public GameObject EndCanvas;
+    private void OnCollisionStay(Collision collision)
     {
         if (collision.collider.tag == "player")
         {
             Destroy(collision.collider.gameObject);
+            Instantiate(EndCanvas, Vector3.zero,Quaternion.identity);
             //SceneManager.LoadScene("SceneMenu", LoadSceneMode.Single);
         }
         if (collision.collider.tag == "Bot")
@@ -18,16 +20,14 @@ public class FallGameOver : MonoBehaviour
         }
     }
 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public void ReturnLobby()
+    {
+        SceneManager.LoadScene("SceneMenu", LoadSceneMode.Single);
     }
 }
