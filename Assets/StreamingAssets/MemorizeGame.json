@@ -34,6 +34,78 @@
         0,
         3
       ]
+    },
+
+    {
+      "question": "Smile",
+      "answer": [
+        "Tongue",
+        "Smile",
+        "Tongue",
+        "Smile"
+      ],
+      "true": [
+        1,
+        3
+      ],
+      "wrong": [
+        0,
+        2
+      ]
+    },
+
+    {
+      "question": "Weary",
+      "answer": [
+        "Angry",
+        "Angry",
+        "Weary",
+        "Weary"
+      ],
+      "true": [
+        2,
+        3
+      ],
+      "wrong": [
+        0,
+        1
+      ]
+    },
+
+    {
+      "question": "Dead",
+      "answer": [
+        "Dead",
+        "Kissing",
+        "Kissing",
+        "Dead"
+      ],
+      "true": [
+        1,
+        2
+      ],
+      "wrong": [
+        0,
+        3
+      ]
+    },
+
+    {
+      "question": "Kissing",
+      "answer": [
+        "Kissing",
+        "Laugh",
+        "Laugh",
+        "Kissing"
+      ],
+      "true": [
+        0,
+        3
+      ],
+      "wrong": [
+        1,
+        2
+      ]
     }
   ]
 }

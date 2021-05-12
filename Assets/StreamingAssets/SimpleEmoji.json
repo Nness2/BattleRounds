@@ -20,6 +20,50 @@
         "Tongue"
       ],
       "true": 2
+    },
+
+    {
+      "question": "Weary",
+      "answer": [
+        "Weary",
+        "Laugh",
+        "Dead",
+        "Ghost"
+      ],
+      "true": 0
+    },
+
+    {
+      "question": "Smile",
+      "answer": [
+        "Love",
+        "Laugh",
+        "Smile",
+        "Tongue"
+      ],
+      "true": 2
+    },
+
+    {
+      "question": "Cry",
+      "answer": [
+        "Ghost",
+        "Cry",
+        "Dead",
+        "Tongue"
+      ],
+      "true": 1
+    },
+
+    {
+      "question": "Nerd",
+      "answer": [
+        "Love",
+        "Laugh",
+        "Cool",
+        "Nerd"
+      ],
+      "true": 3
     }
   ]
 }
