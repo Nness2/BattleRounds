@@ -91,8 +91,11 @@ MonoBehaviour:
     type: 3}
   hexagonGamePrefab: {fileID: 8833470925077975986, guid: e0200ddb013f7fe47a4ecc8c9cfebb15,
     type: 3}
+  EndGamePrefab: {fileID: 1244556519669529073, guid: 10a6561c7dd3f1a459b8206e35d203f5,
+    type: 3}
   EndCanvas: {fileID: 4310753364925276697, guid: b4057e7cc1f06ce4cae1c76401435e7a,
     type: 3}
+  roundCounter: {fileID: 0}
 --- !u!1 &2396448330411337860
 GameObject:
   m_ObjectHideFlags: 0

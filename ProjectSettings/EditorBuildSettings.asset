@@ -14,7 +14,10 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/SceneMenuAds.unity
-    guid: af880faeb22637249a8376a21a7f01c6
+    guid: 0c306865fcf69174997c09c99dd7aa82
   m_configObjects: {}

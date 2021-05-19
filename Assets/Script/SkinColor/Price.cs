@@ -6,22 +6,21 @@ using System.IO;
 using UnityEngine.UI;
 using System.Reflection;
 
-
-public class SelectColor : MonoBehaviour
+public class Price : MonoBehaviour
 {
     string mobileFilePath;
     string filePath;
     string jsonString;
     private JsonData gameData;
-    public GameObject characterColor;
+
     public int price;
-    public GameObject pricePrefab;
-    // Start is called before the first frame update
+    public string selfColor;
+    public Text valueDisplay;
     void Start()
     {
+
         mobileFilePath = Application.persistentDataPath + "/Coins.json";
         filePath = Application.streamingAssetsPath + "/Coins.json";
-        characterColor = GameObject.FindWithTag("MainSurface");
 
 
         if (Application.platform == RuntimePlatform.Android)
@@ -38,6 +37,9 @@ public class SelectColor : MonoBehaviour
                 {
                 }
                 jsonString = www.downloadHandler.text;
+
+                File.WriteAllText(Path.Combine(Application.persistentDataPath, "Coins.json"), jsonString);
+
             }
         }
         else
@@ -46,34 +48,40 @@ public class SelectColor : MonoBehaviour
         }
         gameData = JsonMapper.ToObject(jsonString);
 
-        price = int.Parse(gameData["ColorShop"][0]["price"][0][NameOfColor(GetComponent<Image>().color)].ToString());
-        if (price > 0)
+        valueDisplay.text = price.ToString();
+    }
+
+    public void BuyColor()
+    {
+        if (Application.platform == RuntimePlatform.Android)
         {
-            GameObject priceObj = Instantiate(pricePrefab, transform.position, transform.rotation);
-            priceObj.GetComponent<Price>().price = price;
-            priceObj.GetComponent<Price>().selfColor = NameOfColor(GetComponent<Image>().color);
-            priceObj.GetComponent<RectTransform>().sizeDelta = transform.GetComponent<RectTransform>().sizeDelta;
-            priceObj.transform.SetParent(transform, false);
-            priceObj.transform.position = transform.position;
-            priceObj.transform.rotation = transform.rotation;
+            jsonString = File.ReadAllText(mobileFilePath);
         }
-    }
+        else
+        {
+            jsonString = File.ReadAllText(filePath);
+        }
+        gameData = JsonMapper.ToObject(jsonString);
 
-    public void selctColor()
-    {
-        characterColor.transform.GetComponent<SkinnedMeshRenderer>().material.color = GetComponent<Image>().color;
-    }
+        int haveCoin =  int.Parse(GameObject.FindWithTag("CoinValue").GetComponent<Text>().text);
+        int colorPrice = int.Parse(gameData["ColorShop"][0]["price"][0][selfColor].ToString());
+        if (haveCoin >= colorPrice)
+        {
+            gameData["ColorShop"][0]["price"][0][selfColor] = 0;
+            gameData["Coins"] = haveCoin - colorPrice;
+        }
+        else if (haveCoin < colorPrice)
+        {
+            gameData["ColorShop"][0]["price"][0][selfColor] = colorPrice - haveCoin;
+            gameData["Coins"] = 0;
+        }
 
-    public void SetColorAtFile()
-    {
-        gameData["ColorShop"][0]["currentColor"] = NameOfColor(GetComponent<Image>().color);
 
         if (Application.platform == RuntimePlatform.Android)
         {
             JsonWriter jw1 = new JsonWriter();
             gameData.ToJson(jw1);
             string json1 = jw1.ToString();
-
 
             File.WriteAllText(mobileFilePath, json1);
         }
@@ -84,8 +92,21 @@ public class SelectColor : MonoBehaviour
             string json1 = jw1.ToString();
 
             File.WriteAllText(filePath, json1);
-            
+
         }
+
+        if (haveCoin >= colorPrice)
+        {
+            GameObject.FindWithTag("CoinValue").GetComponent<Text>().text = (haveCoin - colorPrice).ToString();
+            Destroy(transform.gameObject);
+        }
+        else if (haveCoin < colorPrice)
+        {
+            valueDisplay.text = (colorPrice - haveCoin).ToString();
+            GameObject.FindWithTag("CoinValue").GetComponent<Text>().text = "0";
+            gameData["ColorShop"][0]["price"][0][selfColor] = colorPrice - haveCoin;
+        }
+
     }
 
     public string NameOfColor(Color c)

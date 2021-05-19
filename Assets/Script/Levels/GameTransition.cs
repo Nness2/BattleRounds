@@ -16,7 +16,7 @@ public class GameTransition : MonoBehaviour
     public GameObject memorizeGamePrefab;
     public GameObject LavaGamePrefab;
     public GameObject hexagonGamePrefab;
-    public GameObject EndCanvas;
+    public GameObject EndGamePrefab;
     public GameObject roundCounter;
 
 
@@ -39,20 +39,11 @@ public class GameTransition : MonoBehaviour
         countDownText.GetComponent<TMP_Text>().text = currentTime.ToString("0");
         int roundNubmer = GameObject.FindWithTag("GameManager").GetComponent<GameManagerScript>().RoundNumber;
 
-        if (roundNubmer >= 5 )
-        {
-            if (GameObject.FindGameObjectsWithTag("player").Length > 0)
-            {
-                GameObject.FindWithTag("CoinsCanvas").GetComponent<Coins>().AddCoinsAtFile(40);
-                Instantiate(EndCanvas, Vector3.zero, Quaternion.identity);
-                GetComponent<GameTransition>().enabled = false;
-            }
-        }
+
 
         if (currentTime <= 0)
         {
             roundCounter.GetComponent<Text>().text = "Round " + (roundNubmer + 1) + "/5";
-            Destroy(gameObject);
 
             if (roundNubmer == 0)
             {
@@ -74,8 +65,15 @@ public class GameTransition : MonoBehaviour
             {
                 Instantiate(hexagonGamePrefab, transform.position, Quaternion.identity);
             }
-
+            else if (roundNubmer >= 5)
+            {
+                Instantiate(EndGamePrefab, transform.position, Quaternion.identity);
+            }
             GameObject.FindWithTag("GameManager").GetComponent<GameManagerScript>().RoundNumber++;
+
+            Destroy(gameObject);
+
+
         }
     }
 }

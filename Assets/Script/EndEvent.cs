@@ -28,6 +28,6 @@ public class EndEvent : MonoBehaviour
 
     public void ReturnLobby()
     {
-        SceneManager.LoadScene("SceneMenuAds", LoadSceneMode.Single);
+        SceneManager.LoadScene("SceneMenu", LoadSceneMode.Single);
     }
 }

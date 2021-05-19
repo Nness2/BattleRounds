@@ -8273,7 +8273,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   totaltime: 5
   progressbarimg: {fileID: 6985229185890162538}
-  TransitionPrefab: {fileID: 1244556519669529073, guid: f2b67eb3a02510b4793368011975f6f7,
+  TransitionPrefab: {fileID: 1244556519669529073, guid: 10a6561c7dd3f1a459b8206e35d203f5,
     type: 3}
 --- !u!1 &8840401320259747744
 GameObject:

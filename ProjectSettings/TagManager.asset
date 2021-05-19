@@ -15,6 +15,7 @@ TagManager:
   - CoinsCanvas
   - MainSurface
   - RoundText
+  - CoinValue
   layers:
   - Default
   - TransparentFX

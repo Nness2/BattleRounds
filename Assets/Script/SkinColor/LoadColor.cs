@@ -21,7 +21,22 @@ public class LoadColor : MonoBehaviour
 
         if (Application.platform == RuntimePlatform.Android)
         {
-            jsonString = File.ReadAllText(mobileFilePath);
+            if (File.Exists(Path.Combine(Application.persistentDataPath, "Coins.json")))
+            {
+                jsonString = File.ReadAllText(mobileFilePath);
+            }
+            else
+            {
+                UnityEngine.Networking.UnityWebRequest www = UnityEngine.Networking.UnityWebRequest.Get(filePath);
+                www.SendWebRequest();
+                while (!www.isDone)
+                {
+                }
+                jsonString = www.downloadHandler.text;
+
+                File.WriteAllText(Path.Combine(Application.persistentDataPath, "Coins.json"), jsonString);
+
+            }
         }
         else
         {

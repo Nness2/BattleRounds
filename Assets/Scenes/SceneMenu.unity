@@ -564,22 +564,32 @@ PrefabInstance:
     - target: {fileID: 296103285459297628, guid: 6be1894a54de6f84c93e02f844675976,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 87.74
+      value: 217.5
       objectReference: {fileID: 0}
     - target: {fileID: 296103285459297628, guid: 6be1894a54de6f84c93e02f844675976,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 40.7
+      value: 191.3
       objectReference: {fileID: 0}
     - target: {fileID: 296103285459297628, guid: 6be1894a54de6f84c93e02f844675976,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -103
+      value: -180.7
       objectReference: {fileID: 0}
     - target: {fileID: 296103285459297628, guid: 6be1894a54de6f84c93e02f844675976,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 51
+      value: 119.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 296103285459297629, guid: 6be1894a54de6f84c93e02f844675976,
+        type: 3}
+      propertyPath: m_Text
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 296103285459297631, guid: 6be1894a54de6f84c93e02f844675976,
+        type: 3}
+      propertyPath: m_TagString
+      value: CoinValue
       objectReference: {fileID: 0}
     - target: {fileID: 296103286623122120, guid: 6be1894a54de6f84c93e02f844675976,
         type: 3}
